@@ -14,43 +14,45 @@ class display:
 				offset = self.chars - len(s)
 				if(offset < 0):
 					offset = 0	
-				for space in range(0, offset):
+				for i in range(0, offset):
 					space += ' '
-				display.lcd_display_string(space + s, line)
+				print("Printing: "+space + s)
+				self.display.lcd_display_string(space + s, line)
 				line += 1
 		else:
 			space = ''
 			offset = self.chars - len(string)
 			if(offset < 0):
 				offset = 0	
-			for space in range(0, offset):
+			for i in range(0, offset):
 				space += ' '
-			display.lcd_display_string(space + string, line)
+			print("Printing: "+space + string)
+			self.display.lcd_display_string(space + string, line)
 
 	def print_center(self, string, line=1):
 		if(isinstance(string, list)):
 			for s in string:
 				space = ''
 				offset = int(self.chars / 2) - int(len(s) / 2)
-				for space in range(0, offset):
+				for i in range(0, offset):
 					space += ' '
-				display.lcd_display_string(space + s, line)
+				self.display.lcd_display_string(space + s, line)
 				line += 1
 		else:
 			space = ''
 			offset = int(self.chars / 2) - int(len(string) / 2)
-			for space in range(0, offset):
+			for i in range(0, offset):
 				space += ' '
-			display.lcd_display_string(space + string, line)
+			self.display.lcd_display_string(space + string, line)
 
 
 	def print_left(self, string, line=1):
 		if(isinstance(string, list)):
 			for s in string:
-				display.lcd_display_string(s, line)
+				self.display.lcd_display_string(s, line)
 				line += 1
 		else:
-			display.lcd_display_string(string, line)
+			self.display.lcd_display_string(string, line)
 
 
 
