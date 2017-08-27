@@ -16,7 +16,7 @@ class display:
 					offset = 0	
 				for space in range(0, offset):
 					space += ' '
-				display.lcd_display_string(space + s, line++)
+				display.lcd_display_string(space + s, line +=1)
 		else:
 			space = ''
 			offset = self.chars - len(string)
@@ -33,7 +33,7 @@ class display:
 				offset = int(self.chars / 2) - int(len(s) / 2)
 				for space in range(0, offset):
 					space += ' '
-				display.lcd_display_string(space + s, line++)
+				display.lcd_display_string(space + s, line +=1)
 		else:
 			space = ''
 			offset = int(self.chars / 2) - int(len(string) / 2)
@@ -45,7 +45,7 @@ class display:
 	def print(self, string, line=1):
 		if(isinstance(string, list)):
 			for s in string:
-				display.lcd_display_string(s, line++)
+				display.lcd_display_string(s, line +=1)
 		else:
 			display.lcd_display_string(string, line)
 
